@@ -2,12 +2,12 @@
   "name": "gavel-judgment-sdk",
   "version": "0.1.3",
   "type": "module",
-  "description": "TypeScript SDK for Gavel prediction market resolution and GenLayer courts",
+  "description": "TypeScript SDK for Gavel Beta prediction market resolution and GenLayer courts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Al1ranger/gavel-sdk.git"
+    "url": "git+https://github.com/Al1ranger/gavel-beta.git"
   },
-  "homepage": "https://gavel-zeta.vercel.app/",
+  "homepage": "https://gavel-beta-starling-spell.vercel.app/",
   "main": "./dist/index.js",
   "bin": {
     "gavel": "./bin/gavel.mjs"

@@ -1,8 +1,8 @@
-# Gavel SDK
+# Gavel Beta
 
 **Evidence-aware prediction markets and intelligent oracles for GenLayer.**
 
-Gavel turns a typed JavaScript specification into a pinned, deployable GenLayer intelligent contract. Validators retrieve approved public evidence independently, reach consensus, and persist the result with its specification hash and evidence digest.
+Gavel Beta turns a typed JavaScript specification into a pinned, deployable GenLayer intelligent contract. Validators retrieve approved public evidence independently, reach consensus, and persist the result with its specification hash and evidence digest.
 
 ## Install
 
@@ -11,6 +11,8 @@ npm i gavel-judgment-sdk
 ```
 
 Node.js 22.13 or newer is required. npm version 0.1.3 includes the tested developer-experience fixes. See [release notes](docs/RELEASE-NOTES.md) and the [Studio Next guide](docs/STUDIO-NEXT.md).
+
+The published npm package and CLI retain their `gavel-judgment-sdk` and `gavel` names for compatibility during the beta rename.
 
 ## Generate an intelligent contract
 
@@ -88,7 +90,7 @@ Two SDK-generated examples are live on GenLayer StudioNet. Addresses, transactio
 ## Architecture
 
 ```text
-gavel-sdk/
+gavel-beta/
 ├── bin/                     CLI entry point
 ├── demo/                    Local product demo
 ├── docs/                    Architecture, oracle, backend, deployment guides
@@ -150,6 +152,5 @@ License: MIT
 
 ## Developer site
 
-Interactive deployment guide: https://gavel-zeta.vercel.app/
-Docs: https://gavel-zeta.vercel.app/docs
-
+Interactive deployment guide: https://gavel-beta-starling-spell.vercel.app/
+Docs: https://gavel-beta-starling-spell.vercel.app/docs
