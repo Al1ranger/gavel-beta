@@ -152,5 +152,5 @@ License: MIT
 
 ## Developer site
 
-Interactive deployment guide: https://gavel-beta-starling-spell.vercel.app/
-Docs: https://gavel-beta-starling-spell.vercel.app/docs
+Interactive deployment guide: https://gavel-beta-sdk.vercel.app/
+Docs: https://gavel-beta-sdk.vercel.app/docs

@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/Al1ranger/gavel-beta.git"
   },
-  "homepage": "https://gavel-beta-starling-spell.vercel.app/",
+  "homepage": "https://gavel-beta-sdk.vercel.app/",
   "main": "./dist/index.js",
   "bin": {
     "gavel": "./bin/gavel.mjs"
