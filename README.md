@@ -10,7 +10,7 @@ Gavel Beta turns a typed JavaScript specification into a pinned, deployable GenL
 npm i gavel-judgment-sdk
 ```
 
-Node.js 22.13 or newer is required. npm version 0.1.3 includes the tested developer-experience fixes. See [release notes](docs/RELEASE-NOTES.md) and the [Studio Next guide](docs/STUDIO-NEXT.md).
+Node.js 22.13 or newer is required. npm version 0.1.4 enforces mandatory resolution rules through leader and validator paths. See [release notes](docs/RELEASE-NOTES.md) and the [Studio Next guide](docs/STUDIO-NEXT.md).
 
 The published npm package and CLI retain their `gavel-judgment-sdk` and `gavel` names for compatibility during the beta rename.
 
@@ -25,7 +25,7 @@ await writeFile('earthquake_resolver.py', generated.source);
 await writeFile('earthquake_resolver.json', JSON.stringify(generated.compiledSpec, null, 2));
 ```
 
-The generated Python contract pins a concrete GenVM runner, restricts evidence to explicit HTTPS origins, and stores deterministic hashes that clients can verify.
+The generated Python contract pins a concrete GenVM runner, restricts evidence to explicit HTTPS origins, and stores deterministic hashes that clients can verify. Any declared rule marked `satisfied: false` forces `UNRESOLVED`; validators reject a `RESOLVED` candidate with that rule even when their model agrees.
 
 ## Build a custom market
 
@@ -69,11 +69,11 @@ const contract = generateIntelligentContract({
 
 ### Latest verified Studio Next deployment
 
-[USGS earthquake resolver](https://explorer-studio-dev.genlayer.com/address/0xA059bF529c15fDd69ad5320F80DFd04bfc24A2F4) deployed on **chain 61997** through the SDK-generated deployment workflow. Transaction: `0x6760f2f13aa7861cbaddb830811c01b4d9868724ac04bfbc717eb082c68b4a3c`. Verified `FINALIZED` and `FINISHED_WITH_RETURN`; `get_progress` returned `{ attempts: 0, maxAttempts: 8, resolved: false }`. Deployment and reads are verified; evidence judgment has not been executed. [Machine-readable proof](docs/deployments/studio-next-earthquake.json).
+[USGS earthquake resolver](https://explorer-studio-dev.genlayer.com/address/0xc1Cb384F4160FD7bC02E7aA26e21286c09352351) deployed on **chain 61997** through the SDK-generated deployment workflow. Transaction: `0xb06041b3754fce361e7d399049b0bd5972714120743f2ea9aa5bb74ef1732ed8`. Verified `FINALIZED` and `FINISHED_WITH_RETURN`; `get_progress` returned `{ attempts: 0, maxAttempts: 8, resolved: false }`. Deployment and reads are verified; evidence judgment has not been executed. [Machine-readable proof](docs/deployments/studio-next-earthquake.json).
 
-### Earlier verified Studio Next deployment
+### Patched public delivery resolver
 
-[Gavel SDK public delivery resolver on Studio Next](https://explorer-studio-dev.genlayer.com/address/0x8aB6Bb90BABd7A37cACb5DC8Ef16E37A3D1d6cC5) is deployed on **chain ID 61997**. Deployment transaction: `0xfd5ce69672a404e99bb8670c1b36f750ed938eec282693dd547797a0d50c2aee`; verified `FINALIZED` with `FINISHED_WITH_RETURN`. Reading `get_progress` returned `{ attempts: 0, maxAttempts: 8, resolved: false }`.
+[Gavel SDK public delivery resolver on Studio Next](https://explorer-studio-dev.genlayer.com/address/0xd801fA1479EdF2E8D5D9C42e918D6ea69070bF60) is deployed on **chain ID 61997**. Deployment transaction: `0x472fa739519d6454d409fd4ab54001b4b8ca880274cc16f9d019d3919255d888`; verified `FINALIZED` with `FINISHED_WITH_RETURN`. Reading `get_progress` returned `{ attempts: 0, maxAttempts: 8, resolved: false }`.
 
 This deployment adds `# v0.2.0` before the generated pinned runner header and supplies both the live fee estimate's `distribution` and `feeValue`. Its deployment is verified; evidence resolution has not been run.
 

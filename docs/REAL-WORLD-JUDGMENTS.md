@@ -5,7 +5,7 @@ Gavel is useful when a contract needs an on-chain decision about evidence that i
 
 ## Verified deployment and current release
 
-Use `npm install gavel-judgment-sdk@0.1.3`. [Studio Next deployment guide](STUDIO-NEXT.md) documents the verified earthquake resolver on chain **61997**: [0xA059bF529c15fDd69ad5320F80DFd04bfc24A2F4](https://explorer-studio-dev.genlayer.com/address/0xA059bF529c15fDd69ad5320F80DFd04bfc24A2F4). Its deployment finalized with `FINISHED_WITH_RETURN`, and `get_progress` was read successfully. Judgment resolution has not been executed.
+Use `npm install gavel-judgment-sdk@0.1.4`. [Studio Next deployment guide](STUDIO-NEXT.md) documents the verified earthquake resolver on chain **61997**: [0xc1Cb384F4160FD7bC02E7aA26e21286c09352351](https://explorer-studio-dev.genlayer.com/address/0xc1Cb384F4160FD7bC02E7aA26e21286c09352351). Its deployment finalized with `FINISHED_WITH_RETURN`, and `get_progress` was read successfully. Judgment resolution has not been executed.
 
 The use cases below describe application designs, not completed judgments or verified payouts.
 

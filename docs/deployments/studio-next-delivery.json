@@ -1,0 +1,18 @@
+{
+  "sdkVersion": "0.1.4",
+  "chainId": 61997,
+  "transactionHash": "0x472fa739519d6454d409fd4ab54001b4b8ca880274cc16f9d019d3919255d888",
+  "address": "0xd801fA1479EdF2E8D5D9C42e918D6ea69070bF60",
+  "status": "FINALIZED",
+  "execution": "FINISHED_WITH_RETURN",
+  "explorer": "https://explorer-studio-dev.genlayer.com/address/0xd801fA1479EdF2E8D5D9C42e918D6ea69070bF60",
+  "sourceSha256": "8fe77a9da3e416a8c21316d03c139603da3283bceaae1df4128823d597df87df",
+  "sourceMatchesCurrent": true,
+  "checkedAt": "2026-10-03T15:30:32.656Z",
+  "supersedes": "0x8aB6Bb90BABd7A37cACb5DC8Ef16E37A3D1d6cC5",
+  "progress": {
+    "attempts": 0,
+    "maxAttempts": 8,
+    "resolved": false
+  }
+}

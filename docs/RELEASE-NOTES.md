@@ -1,6 +1,6 @@
 # Release notes
 
-## Unreleased
+## 0.1.4
 
 - Generated categorical resolvers deterministically return UNRESOLVED when any
   declared mandatory resolution rule is marked unsatisfied. Validator acceptance
@@ -10,8 +10,10 @@
 - Verification: all four new regression cases fail before the fix and pass after
   it; 150 SDK tests, 64 direct contract tests, and four generated-contract lint
   checks pass.
-- Regenerate and redeploy existing contracts to adopt the fix; deployed contract
-  code and the published 0.1.3 npm package are unchanged.
+- Upgrade to 0.1.4, regenerate, and redeploy to adopt the fix. The reference
+  earthquake and public-delivery resolvers were replaced on chain 61997; both
+  finalized successfully and their on-chain source matches the patched generator.
+  Old deployment addresses are immutable and retain their previous code.
 
 ## 0.1.3 — published
 
