@@ -222,6 +222,9 @@ SECURITY BOUNDARY:
 IMMUTABLE MARKET SPECIFICATION:
 {json.dumps(spec, separators=(",", ":"), sort_keys=True)}
 
+Every declared resolution rule is mandatory. If any rule is not satisfied,
+return UNRESOLVED regardless of what the rest of the evidence suggests.
+
 Every feature marked required must be satisfied by approved evidence. If any
 required feature is not satisfied, the status is UNRESOLVED regardless of what
 the rest of the evidence suggests.
@@ -341,6 +344,11 @@ Return JSON only:
                     "satisfied": satisfied,
                 }
             )
+
+        # Every declared resolution rule is mandatory, even when both judges
+        # propose the same winner with an unsatisfied rule.
+        if any(not rule["satisfied"] for rule in normalized_rules):
+            status, winner_index, outcome_id = "UNRESOLVED", -1, "UNRESOLVED"
 
         # A required feature is enforced by the contract, not by the model's
         # goodwill. An unsatisfied requirement forces UNRESOLVED even when the

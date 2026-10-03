@@ -1,5 +1,18 @@
 # Release notes
 
+## Unreleased
+
+- Generated categorical resolvers deterministically return UNRESOLVED when any
+  declared mandatory resolution rule is marked unsatisfied. Validator acceptance
+  rejects a RESOLVED candidate even when both model answers agree on the false rule.
+- Regression tests exercise each rule through leader finalization, canonical
+  UNRESOLVED acceptance, and invalid RESOLVED candidate rejection.
+- Verification: all four new regression cases fail before the fix and pass after
+  it; 150 SDK tests, 64 direct contract tests, and four generated-contract lint
+  checks pass.
+- Regenerate and redeploy existing contracts to adopt the fix; deployed contract
+  code and the published 0.1.3 npm package are unchanged.
+
 ## 0.1.3 — published
 
 - Expanded deployment proof, troubleshooting and site documentation.

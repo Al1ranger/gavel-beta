@@ -208,6 +208,36 @@ def test_consequential_rule_disagreement_rejects_same_winner(resolver, direct_vm
     assert direct_vm.run_validator() is False
 
 
+@pytest.mark.parametrize("rule_index", [0, 1])
+def test_unsatisfied_mandatory_rule_forces_unresolved(resolver, direct_vm, rule_index):
+    result = answer(resolver)
+    result["rulesApplied"][rule_index]["satisfied"] = False
+    mock_judge(direct_vm, resolver, result)
+    resolver.resolve()
+    verdict = json.loads(resolver.get_verdict())
+    assert verdict["rulesApplied"][rule_index]["satisfied"] is False
+    assert (verdict["status"], verdict["winnerIndex"], verdict["outcomeId"]) == ("UNRESOLVED", -1, "UNRESOLVED")
+    assert resolver.get_progress()["resolved"] is False
+    assert json.loads(resolver.get_attempt(0)) == verdict
+    # Both models propose RESOLVED; the callback accepts only the gated result.
+    assert direct_vm.run_validator() is True
+
+
+@pytest.mark.parametrize("rule_index", [0, 1])
+def test_validator_rejects_resolved_candidate_when_both_judges_mark_rule_unsatisfied(resolver, direct_vm, rule_index):
+    mock_judge(direct_vm, resolver)
+    resolver.resolve()
+    forged = candidate(resolver)
+    forged["verdict"]["rulesApplied"][rule_index]["satisfied"] = False
+    result = answer(resolver)
+    result["rulesApplied"][rule_index]["satisfied"] = False
+    direct_vm.clear_mocks()
+    mock_judge(direct_vm, resolver, result)
+    # Reject the unnormalized RESOLVED leader even when the independent judge
+    # agrees on its winner, confidence, evidence, and unsatisfied rule.
+    assert direct_vm.run_validator(leader_result=forged) is False
+
+
 def test_validator_rejects_forged_digest_and_leader_error(resolver, direct_vm):
     mock_judge(direct_vm, resolver)
     resolver.resolve()

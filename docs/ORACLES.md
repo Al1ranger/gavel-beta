@@ -39,7 +39,12 @@ identity fields before a model sees the content. Deploy-time rules are immutable
 Default confidence gate: 8000 basis points; tolerance: zero. Even when tolerance
 is configured, validators must agree on the threshold decision, winner, all
 reported criterion booleans and evidence digest. Missing required features force
-UNRESOLVED. Each resolved answer requires source quotes and a complete rule audit.
+UNRESOLVED. All declared resolution rules are mandatory: any rule marked
+`satisfied: false` deterministically forces `status: UNRESOLVED`,
+`winnerIndex: -1`, and `outcomeId: UNRESOLVED`, even when the model proposes a
+winner. Validators reject an unnormalized RESOLVED candidate with such a rule;
+agreement between model answers cannot bypass the gate. Each resolved answer
+requires source quotes and a complete rule audit.
 Confidence describes evidence sufficiency, never future event odds.
 
 UNRESOLVED attempts are recorded and can be retried after a cooldown. Defaults are
