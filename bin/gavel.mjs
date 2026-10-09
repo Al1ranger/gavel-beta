@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { readFile, writeFile } from 'node:fs/promises';
 import { prepareStudioNext } from './studio-next.mjs';
-import { createGavelClient, normalizeMarketSpec, generateIntelligentContract, generateScalarOracle, generateOddsJournal, readApi, normalizeOdds } from '../dist/index.js';
+import { createGavelClient, normalizeMarketSpec, generateIntelligentContract, generateScalarOracle, generateOddsJournal, readApi, normalizeOdds, auditResolutionBundle } from '../dist/index.js';
 
 const [command = 'help', value, output] = process.argv.slice(2);
 const json = async path => {
@@ -30,6 +30,7 @@ try {
 
   studio-next-info              Print Studio Next chain and RPC settings
   prepare-studio-next <py> <dir> Create a resumable GenLayer CLI deployment project
+  audit-resolution <bundle> <policy>  Offline evidence and policy audit (no chain authentication)
 
 Reads require GAVEL_CONTRACT_ADDRESS, optional GAVEL_NETWORK and GENLAYER_RPC_URL.
 This CLI does not sign transactions. Use the SDK with your own signer for writes.`);
@@ -62,10 +63,11 @@ This CLI does not sign transactions. Use the SDK with your own signer for writes
       print({ network: 'studioNext', chainId: 61997, rpcUrl: 'https://studio-dev.genlayer.com/api', explorer: 'https://explorer-studio-dev.genlayer.com' });
       break;
     case 'prepare-studio-next': print(await prepareStudioNext(value, output)); break;
+    case 'audit-resolution': print(auditResolutionBundle(await json(value), await json(output))); break;
     default: throw new Error(`Unknown command: ${command}. Run gavel help.`);
   }
 } catch (error) {
   // Avoid exposing provider payloads or credentials in automation logs.
-  console.error(JSON.stringify({ error: ['validate', 'generate', 'generate-scalar', 'generate-odds', 'odds', 'help', 'prepare-studio-next'].includes(command) ? error.message : 'Command failed. Check input, configuration and provider availability.', command }));
+  console.error(JSON.stringify({ error: ['validate', 'generate', 'generate-scalar', 'generate-odds', 'odds', 'help', 'prepare-studio-next', 'audit-resolution'].includes(command) ? error.message : 'Command failed. Check input, configuration and provider availability.', command }));
   process.exitCode = 1;
 }

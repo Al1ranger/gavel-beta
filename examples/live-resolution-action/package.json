@@ -1,0 +1,7 @@
+{
+  "name": "gavel-live-resolution-action-example",
+  "private": true,
+  "type": "module",
+  "scripts": { "verify": "node verify.mjs" },
+  "dependencies": { "genlayer-js": "2.0.0-rc.1" }
+}

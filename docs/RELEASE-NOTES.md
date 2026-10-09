@@ -1,5 +1,23 @@
 # Release notes
 
+## 0.2.0 — resolution actions
+
+- New `gavel-judgment-sdk/resolution` entry point: verified finalized resolution
+  acquisition, independently pinned spec policy and downstream action execution.
+- Recompute Python-compatible evidence and specification commitments; validate
+  mandatory rules/features, confidence, source availability, quotes and freshness.
+- Bind successful finalized consensus receipts to the categorical resolver call.
+- Export versioned audit bundles and audit them with `gavel audit-resolution`.
+  Offline checks explicitly do not authenticate chain finality.
+- Memory and durable local-file action stores reserve before the callback;
+  concurrent/replayed consumers cannot repeat a completed action. Interrupted
+  outcomes require downstream reconciliation and never automatically retry.
+- New reproducible job-release integration example, API guide and adversarial
+  regression tests. No private keys or token transfers are added to the SDK.
+- Verification: 192 SDK tests pass (42 new). Live consensus released one local
+  job; replay/restart performed zero additional writes. A failed live judgment
+  made zero reservations and zero writes. Provider errors are sanitized.
+
 ## 0.1.4
 
 - Generated categorical resolvers deterministically return UNRESOLVED when any

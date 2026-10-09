@@ -16,5 +16,7 @@ export * from './contractEvidence.ts';
 export * from './oracles.ts';
 export * from './recipes.ts';
 export * from './oracleClient.ts';
+export * from './resolutionAudit.ts';
+export * from './resolutionActions.ts';
 export { Gavel } from './gavel.ts';
 export type { GavelConfig, Submitted } from './gavel.ts';

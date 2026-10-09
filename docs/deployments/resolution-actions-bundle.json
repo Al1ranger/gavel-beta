@@ -1,0 +1,116 @@
+{
+  "chainId": 61997,
+  "contractAddress": "0xf91789141312A8fE22c50489E2aaFd0af645F2E7",
+  "receipt": {
+    "args": [],
+    "consensus": "MAJORITY_AGREE",
+    "contractAddress": "0xf91789141312A8fE22c50489E2aaFd0af645F2E7",
+    "execution": "FINISHED_WITH_RETURN",
+    "functionName": "resolve",
+    "leaderOnly": false,
+    "status": "FINALIZED",
+    "transactionHash": "0xa5d8d3def5619a68c8744f6f452e0da65b910a97f9ba68286986c3617bab52dc"
+  },
+  "spec": {
+    "approvedSources": [
+      "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/c64a1edb67b6e3f4a15cca8909c9482ad33a02b0/LICENSE"
+    ],
+    "confidenceToleranceBps": 500,
+    "evidence": {
+      "maxNormalizedChars": 12000,
+      "maxResponseBytes": 262144,
+      "minimumSources": 1,
+      "sources": [
+        {
+          "expect": {},
+          "fields": {},
+          "format": "text",
+          "sha256": "13cd784a6c31361f0e0c6aa3b410a1cb9a079868b7314c13e3eb8a75351746b9",
+          "url": "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/c64a1edb67b6e3f4a15cca8909c9482ad33a02b0/LICENSE"
+        }
+      ]
+    },
+    "features": [],
+    "marketId": "OPENZEPPELIN-LICENSE-PERMISSION",
+    "maxAttempts": 8,
+    "minimumConfidenceBps": 8500,
+    "outcomes": [
+      {
+        "id": "PERMITTED",
+        "index": 0,
+        "label": "Redistribution permission with notice condition"
+      },
+      {
+        "id": "RESTRICTED",
+        "index": 1,
+        "label": "Document does not grant that permission"
+      }
+    ],
+    "question": "Does this pinned OpenZeppelin license permit redistribution, subject to retaining copyright and permission notices?",
+    "resolutionRules": [
+      "Select PERMITTED only if the document grants redistribution and requires retention of copyright and permission notices; otherwise select RESTRICTED.",
+      "Support each fact using an exact contiguous quote from the acquired document, without adding, omitting, or paraphrasing characters. Prefer short quotes within one sentence."
+    ],
+    "resolutionTime": 1757869200,
+    "retryDelaySeconds": 60,
+    "shape": {
+      "kind": "BINARY"
+    },
+    "sourcePolicy": {
+      "authority": "OpenZeppelin repository at a pinned commit",
+      "corrections": "Use only the hash-pinned document; no caller-supplied claims."
+    }
+  },
+  "transactionHash": "0xa5d8d3def5619a68c8744f6f452e0da65b910a97f9ba68286986c3617bab52dc",
+  "verdict": {
+    "attempt": 1,
+    "confidenceBps": 10000,
+    "conflicts": [],
+    "evidence": [
+      {
+        "available": true,
+        "content": "The MIT License (MIT) Copyright (c) 2016-2025 Zeppelin Group Ltd Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
+        "error": "",
+        "source": "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/c64a1edb67b6e3f4a15cca8909c9482ad33a02b0/LICENSE"
+      }
+    ],
+    "evidenceDigest": "0x8e344319056ddaa54cba6d508f77838f5260d6cab3076b05c73be1028a67aad2",
+    "facts": [
+      {
+        "claim": "The license grants permission to distribute copies of the Software",
+        "quote": "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software",
+        "source": "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/c64a1edb67b6e3f4a15cca8909c9482ad33a02b0/LICENSE",
+        "supportsOutcome": "PERMITTED"
+      },
+      {
+        "claim": "The license requires retention of copyright and permission notices",
+        "quote": "The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.",
+        "source": "https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts/c64a1edb67b6e3f4a15cca8909c9482ad33a02b0/LICENSE",
+        "supportsOutcome": "PERMITTED"
+      }
+    ],
+    "featuresApplied": [],
+    "marketId": "OPENZEPPELIN-LICENSE-PERMISSION",
+    "observedAt": 1791521411,
+    "outcomeId": "PERMITTED",
+    "reasonCode": "LICENSE_GRANTS_REDISTRIBUTION_WITH_NOTICE_CONDITION",
+    "reasoningSummary": "The MIT License explicitly grants permission to distribute copies of the Software and requires inclusion of copyright and permission notices in all copies, satisfying all conditions for PERMITTED outcome.",
+    "rulesApplied": [
+      {
+        "explanation": "The document explicitly grants redistribution permission and requires retention of copyright and permission notices",
+        "rule": "Select PERMITTED only if the document grants redistribution and requires retention of copyright and permission notices; otherwise select RESTRICTED.",
+        "satisfied": true
+      },
+      {
+        "explanation": "Each fact is supported by exact contiguous quotes from the document",
+        "rule": "Support each fact using an exact contiguous quote from the acquired document, without adding, omitting, or paraphrasing characters. Prefer short quotes within one sentence.",
+        "satisfied": true
+      }
+    ],
+    "specHash": "0xe0772dcfcda9d27b345b491c238273f4785e166cf310b970413dafbe6cc78d0d",
+    "status": "RESOLVED",
+    "winnerIndex": 0
+  },
+  "version": 1,
+  "bundleHash": "0xbcc8628857e1f5353044cb27f5d6bd13d77e18b27e3424a7d76e1f92062a3aa4"
+}

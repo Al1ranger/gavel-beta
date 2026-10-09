@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-10-09T04:52:02.094Z",
+  "chainId": 61997,
+  "address": "0xf91789141312A8fE22c50489E2aaFd0af645F2E7",
+  "resolveTx": "0xa5d8d3def5619a68c8744f6f452e0da65b910a97f9ba68286986c3617bab52dc",
+  "specHash": "0xe0772dcfcda9d27b345b491c238273f4785e166cf310b970413dafbe6cc78d0d",
+  "sourceSha256": "f5ae9ef010f0797c6c37969cd78d640dcff42356b74c5135bf2aa9a56f59c155",
+  "status": "RESOLVED",
+  "outcomeId": "PERMITTED",
+  "evidenceDigest": "0x8e344319056ddaa54cba6d508f77838f5260d6cab3076b05c73be1028a67aad2",
+  "bundleHash": "0xbcc8628857e1f5353044cb27f5d6bd13d77e18b27e3424a7d76e1f92062a3aa4",
+  "action": "COMPLETED",
+  "replay": "ALREADY_COMPLETED",
+  "downstreamWrites": 1,
+  "actionReceipt": "local-job:sdk-public-delivery-v1:released",
+  "downstream": "Local job-release file; no token transfer or cross-chain settlement",
+  "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xa5d8d3def5619a68c8744f6f452e0da65b910a97f9ba68286986c3617bab52dc",
+  "deploymentTx": "0x34e20099ff554fa78c506c5809b59081e13749c300fef414aa39fd0fed5e038b",
+  "sourcePrefix": "# v0.2.0",
+  "negativeControl": {
+    "address": "0xd801fA1479EdF2E8D5D9C42e918D6ea69070bF60",
+    "execution": "FINISHED_WITH_ERROR",
+    "transactionHash": "0x811789cc062c1ca867fa98e092803b478fae446b2829eb9fec78dc4bfe85423b",
+    "reason": "[LLM_ERROR] UNSUPPORTED_FACT_QUOTE",
+    "downstreamWrites": 0,
+    "consumerRejection": "RPC_READ_FAILED (verdict not available after failed resolve)",
+    "actionReservations": 0
+  },
+  "restartVerification": {
+    "checkedAt": "2026-10-09T04:57:32.434Z",
+    "chainId": 61997,
+    "address": "0xf91789141312A8fE22c50489E2aaFd0af645F2E7",
+    "resolveTx": "0xa5d8d3def5619a68c8744f6f452e0da65b910a97f9ba68286986c3617bab52dc",
+    "specHash": "0xe0772dcfcda9d27b345b491c238273f4785e166cf310b970413dafbe6cc78d0d",
+    "sourceSha256": "f5ae9ef010f0797c6c37969cd78d640dcff42356b74c5135bf2aa9a56f59c155",
+    "status": "RESOLVED",
+    "outcomeId": "PERMITTED",
+    "evidenceDigest": "0x8e344319056ddaa54cba6d508f77838f5260d6cab3076b05c73be1028a67aad2",
+    "bundleHash": "0xbcc8628857e1f5353044cb27f5d6bd13d77e18b27e3424a7d76e1f92062a3aa4",
+    "action": "ALREADY_COMPLETED",
+    "replay": "ALREADY_COMPLETED",
+    "downstreamWrites": 0,
+    "actionReceipt": "local-job:sdk-public-delivery-v1:released",
+    "downstream": "Local job-release file; no token transfer or cross-chain settlement",
+    "explorer": "https://explorer-studio-dev.genlayer.com/tx/0xa5d8d3def5619a68c8744f6f452e0da65b910a97f9ba68286986c3617bab52dc"
+  },
+  "tests": {
+    "total": 192,
+    "added": 42,
+    "failed": 0
+  },
+  "sourceVerifiedAgainstRpc": true
+}

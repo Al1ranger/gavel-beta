@@ -14,3 +14,4 @@ __pycache__/
 .env.*
 !.env.example
 .vercel
+examples/live-resolution-action/data/

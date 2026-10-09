@@ -1,6 +1,6 @@
 {
   "name": "gavel-judgment-sdk",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "type": "module",
   "description": "TypeScript SDK for Gavel Beta prediction market resolution and GenLayer courts",
   "repository": {
@@ -14,6 +14,10 @@
   },
   "types": "./dist/index.d.ts",
   "exports": {
+    "./resolution": {
+      "types": "./dist/resolution.d.ts",
+      "import": "./dist/resolution.js"
+    },
     "./platform": {
       "types": "./dist/platform.d.ts",
       "import": "./dist/platform.js"
@@ -48,6 +52,7 @@
     "bin",
     "docs/STUDIO-NEXT.md",
     "docs/RELEASE-NOTES.md",
+    "docs/RESOLUTION-ACTIONS.md",
     "docs/deployments",
     "docs/REAL-WORLD-JUDGMENTS.md",
     "docs/STUDIONET-DEPLOYMENTS.md",

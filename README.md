@@ -53,6 +53,30 @@ const contract = generateIntelligentContract({
 });
 ```
 
+## Finalized resolution actions (0.2.0)
+
+`gavel-judgment-sdk/resolution` connects a generated categorical verdict to an
+application-owned downstream action. It obtains fresh finalized state, checks
+receipt identity, specification and evidence hashes, mandatory rules/features,
+confidence, source coverage, supporting quotes and age limits. Atomic action
+reservations prevent duplicate callbacks across retries and local workers.
+
+Portable JSON audit bundles can be reviewed with `gavel audit-resolution`.
+Offline hashes check integrity, not chain authenticity; execution always uses
+the consuming application's trusted RPC. Interrupted actions require explicit
+reconciliation. The SDK never sends a payment.
+
+From a source checkout:
+
+```bash
+npm run build
+node examples/resolution-action.ts
+node bin/gavel.mjs audit-resolution artifacts/resolution-action-demo/bundle.json artifacts/resolution-action-demo/policy.json
+```
+
+The example uses an explicitly synthetic RPC and releases one local job. Reruns
+perform zero additional writes. [Integration API and trust model](docs/RESOLUTION-ACTIONS.md).
+
 ## Oracle modes
 
 | Generator | Result | Use case |

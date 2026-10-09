@@ -1,0 +1,12 @@
+{
+  "chainId": 61997,
+  "contractAddress": "0xf91789141312A8fE22c50489E2aaFd0af645F2E7",
+  "expectedSpecHash": "0xe0772dcfcda9d27b345b491c238273f4785e166cf310b970413dafbe6cc78d0d",
+  "minimumConfidenceBps": 8500,
+  "minimumSources": 1,
+  "maxAgeSeconds": 86400,
+  "now": 1791521787,
+  "allowedOutcomes": [
+    "PERMITTED"
+  ]
+}
