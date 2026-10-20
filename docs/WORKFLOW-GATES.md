@@ -158,6 +158,19 @@ observation has a one-hour policy.
 The demo tests missing prerequisite, unauthorized actor, unresolved oracle,
 successful completions and unchanged replay. See [milestone evidence](MILESTONE-V2.md).
 
+Read-only verification of the committed deployment:
+
+```bash
+npm ci --prefix examples/live-resolution-action
+node examples/live-resolution-action/verify-workflow.mjs
+node bin/gavel.mjs audit-workflow docs/deployments/workflow-gates-manifest.json docs/deployments/workflow-gates-completions.json
+```
+
+The verifier reads both resolver sources, checks the gate source against this
+generator, compares onchain completions with the recorded receipts, verifies
+all nine finalized transactions and exact rejection codes, and checks progress
+remains 2/2. It supplies no signer and sends no transaction.
+
 ## Local verification
 
 ```bash

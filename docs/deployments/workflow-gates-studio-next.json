@@ -1,0 +1,227 @@
+{
+  "checkedAt": "2026-10-20T06:55:04.785Z",
+  "chainId": 61997,
+  "rpc": "https://studio-dev.genlayer.com/api",
+  "gate": {
+    "address": "0x0125160cc18E74E3F09f203c55697A0f19f60D78",
+    "sourceSha256": "6ae39c6eed0447b2c532dc69f22a002982b5565f2b89485a770da1685811bee2"
+  },
+  "oracle": {
+    "address": "0x55943C4e7E61dE3654DB6EcAcb8Cd3e915408C05",
+    "sourceSha256": "e7833f876144511e64dc09b924604eac5e3e0ca4b5bea0ae2dd1a94ae09a1333"
+  },
+  "manifest": {
+    "checkpoints": [
+      {
+        "actor": "0x0d0416a49ecb3437a827ee0605c54b2c88352689",
+        "artifactHash": "0x13cd784a6c31361f0e0c6aa3b410a1cb9a079868b7314c13e3eb8a75351746b9",
+        "id": "LEGAL",
+        "oracles": [
+          "LICENSE"
+        ],
+        "requires": []
+      },
+      {
+        "actor": "0x0d0416a49ecb3437a827ee0605c54b2c88352689",
+        "artifactHash": "0x13cd784a6c31361f0e0c6aa3b410a1cb9a079868b7314c13e3eb8a75351746b9",
+        "id": "RELEASE",
+        "oracles": [
+          "LICENSE",
+          "WARRANTY"
+        ],
+        "requires": [
+          "LEGAL"
+        ]
+      }
+    ],
+    "oracles": [
+      {
+        "allowedOutcomes": [
+          "PERMITTED"
+        ],
+        "contractAddress": "0xf91789141312a8fe22c50489e2aafd0af645f2e7",
+        "expectedSpecHash": "0xe0772dcfcda9d27b345b491c238273f4785e166cf310b970413dafbe6cc78d0d",
+        "id": "LICENSE",
+        "marketId": "OPENZEPPELIN-LICENSE-PERMISSION",
+        "maxAgeSeconds": 31536000,
+        "minimumConfidenceBps": 8500,
+        "minimumSources": 1
+      },
+      {
+        "allowedOutcomes": [
+          "DISCLAIMED"
+        ],
+        "contractAddress": "0x55943c4e7e61de3654db6ecacb8cd3e915408c05",
+        "expectedSpecHash": "0x639f276e20d6e34a6f7faab84ccbd4255e19a41073fab07def0983449e490c3d",
+        "id": "WARRANTY",
+        "marketId": "OPENZEPPELIN-WARRANTY-DISCLAIMER",
+        "maxAgeSeconds": 3600,
+        "minimumConfidenceBps": 8500,
+        "minimumSources": 1
+      }
+    ],
+    "version": 1,
+    "workflowId": "OPENZEPPELIN-RELEASE-GATES"
+  },
+  "manifestHash": "0x5bf52fae14bf76d6e16c92f451dc6763698660a97bd2817e0fb45c8ed1aa57fa",
+  "transactions": {
+    "gateDeployment": "0x89e003ef6e1b07140a0e5b1a16d471fc9aebcca53ea87940ce37d10f97de6588",
+    "missingDependency": "0xd8d216a9435bc9f83c7646721dfad0f2dd15d489b75b214dcfbdbb897414568f",
+    "unauthorizedActor": "0x56b74e12bda68957bf1f34e86b35c53449f3c409668f8085b00e31f22370fe98",
+    "legalCompletion": "0x899ed873a5120e825b5f8978dd77f75411640b163c0d7fca13682fb8dcd066e4",
+    "unresolvedOracle": "0x5e90914707ffb240f101fa8d3c113904d4c874bf4688cee24fa66a471efaf258",
+    "oracleResolution": "0x50bf610e9d2c8e134f14192787bfd80a79e9aa723a5e75e828ae5a7ba9670252",
+    "releaseCompletion": "0xe02ca5d81231bd683f33f620a8ca338500a6ba7eed67ef9ef51ecf4ca7908d50",
+    "replayCompletion": "0x4ab5571fc5e149fc986ab42773d5f0f6ba833ac31d193715774e60661012f832",
+    "oracleDeployment": "0x7235a8bb8469a25df30314ef927f2f8b549866208bd37a12a82be90d3e47413f"
+  },
+  "progress": {
+    "completed": 2,
+    "manifestHash": "0x5bf52fae14bf76d6e16c92f451dc6763698660a97bd2817e0fb45c8ed1aa57fa",
+    "total": 2,
+    "workflowId": "OPENZEPPELIN-RELEASE-GATES"
+  },
+  "receipts": [
+    {
+      "actor": "0x0d0416a49ecb3437a827ee0605c54b2c88352689",
+      "artifactHash": "0x13cd784a6c31361f0e0c6aa3b410a1cb9a079868b7314c13e3eb8a75351746b9",
+      "checkpointId": "LEGAL",
+      "completedAt": 1792478596,
+      "dependencies": [],
+      "manifestHash": "0x5bf52fae14bf76d6e16c92f451dc6763698660a97bd2817e0fb45c8ed1aa57fa",
+      "oracles": [
+        {
+          "contractAddress": "0xf91789141312a8fe22c50489e2aafd0af645f2e7",
+          "evidenceDigest": "0x8e344319056ddaa54cba6d508f77838f5260d6cab3076b05c73be1028a67aad2",
+          "id": "LICENSE",
+          "observedAt": 1791521411,
+          "outcomeId": "PERMITTED",
+          "specHash": "0xe0772dcfcda9d27b345b491c238273f4785e166cf310b970413dafbe6cc78d0d"
+        }
+      ],
+      "receiptHash": "0x86b9acd8e2ad6450443639d8c2f7fb2807aef2a9eb224129be0182f6d9c5ed9d",
+      "sequence": 1,
+      "version": 1,
+      "workflowId": "OPENZEPPELIN-RELEASE-GATES"
+    },
+    {
+      "actor": "0x0d0416a49ecb3437a827ee0605c54b2c88352689",
+      "artifactHash": "0x13cd784a6c31361f0e0c6aa3b410a1cb9a079868b7314c13e3eb8a75351746b9",
+      "checkpointId": "RELEASE",
+      "completedAt": 1792479172,
+      "dependencies": [
+        {
+          "checkpointId": "LEGAL",
+          "receiptHash": "0x86b9acd8e2ad6450443639d8c2f7fb2807aef2a9eb224129be0182f6d9c5ed9d"
+        }
+      ],
+      "manifestHash": "0x5bf52fae14bf76d6e16c92f451dc6763698660a97bd2817e0fb45c8ed1aa57fa",
+      "oracles": [
+        {
+          "contractAddress": "0xf91789141312a8fe22c50489e2aafd0af645f2e7",
+          "evidenceDigest": "0x8e344319056ddaa54cba6d508f77838f5260d6cab3076b05c73be1028a67aad2",
+          "id": "LICENSE",
+          "observedAt": 1791521411,
+          "outcomeId": "PERMITTED",
+          "specHash": "0xe0772dcfcda9d27b345b491c238273f4785e166cf310b970413dafbe6cc78d0d"
+        },
+        {
+          "contractAddress": "0x55943c4e7e61de3654db6ecacb8cd3e915408c05",
+          "evidenceDigest": "0x8e344319056ddaa54cba6d508f77838f5260d6cab3076b05c73be1028a67aad2",
+          "id": "WARRANTY",
+          "observedAt": 1792479098,
+          "outcomeId": "DISCLAIMED",
+          "specHash": "0x639f276e20d6e34a6f7faab84ccbd4255e19a41073fab07def0983449e490c3d"
+        }
+      ],
+      "receiptHash": "0xc791a1f9d86293da8898875b59b047e1d24da94cb8f47fcfa128cbfecb3f737a",
+      "sequence": 2,
+      "version": 1,
+      "workflowId": "OPENZEPPELIN-RELEASE-GATES"
+    }
+  ],
+  "controls": {
+    "missingDependency": "FINISHED_WITH_ERROR",
+    "unauthorizedActor": "FINISHED_WITH_ERROR",
+    "unresolvedOracle": "FINISHED_WITH_ERROR",
+    "replay": "UNCHANGED_RECEIPT_AND_COUNT"
+  },
+  "scope": "Onchain checkpoint registry only. No token transfer, software publication or legal certification.",
+  "transactionResults": {
+    "gateDeployment": {
+      "transactionHash": "0x89e003ef6e1b07140a0e5b1a16d471fc9aebcca53ea87940ce37d10f97de6588",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "consensus": "MAJORITY_AGREE",
+      "leaderOnly": false
+    },
+    "missingDependency": {
+      "transactionHash": "0xd8d216a9435bc9f83c7646721dfad0f2dd15d489b75b214dcfbdbb897414568f",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_ERROR",
+      "consensus": "MAJORITY_AGREE",
+      "leaderOnly": false,
+      "rejection": "CHECKPOINT_DEPENDENCY_REQUIRED"
+    },
+    "unauthorizedActor": {
+      "transactionHash": "0x56b74e12bda68957bf1f34e86b35c53449f3c409668f8085b00e31f22370fe98",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_ERROR",
+      "consensus": "MAJORITY_AGREE",
+      "leaderOnly": false,
+      "rejection": "CHECKPOINT_ACTOR_REQUIRED"
+    },
+    "legalCompletion": {
+      "transactionHash": "0x899ed873a5120e825b5f8978dd77f75411640b163c0d7fca13682fb8dcd066e4",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "consensus": "MAJORITY_AGREE",
+      "leaderOnly": false
+    },
+    "unresolvedOracle": {
+      "transactionHash": "0x5e90914707ffb240f101fa8d3c113904d4c874bf4688cee24fa66a471efaf258",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_ERROR",
+      "consensus": "MAJORITY_AGREE",
+      "leaderOnly": false,
+      "rejection": "VERDICT_NOT_AVAILABLE"
+    },
+    "oracleResolution": {
+      "transactionHash": "0x50bf610e9d2c8e134f14192787bfd80a79e9aa723a5e75e828ae5a7ba9670252",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "consensus": "MAJORITY_AGREE",
+      "leaderOnly": false
+    },
+    "releaseCompletion": {
+      "transactionHash": "0xe02ca5d81231bd683f33f620a8ca338500a6ba7eed67ef9ef51ecf4ca7908d50",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "consensus": "MAJORITY_AGREE",
+      "leaderOnly": false
+    },
+    "replayCompletion": {
+      "transactionHash": "0x4ab5571fc5e149fc986ab42773d5f0f6ba833ac31d193715774e60661012f832",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "consensus": "MAJORITY_AGREE",
+      "leaderOnly": false
+    },
+    "oracleDeployment": {
+      "transactionHash": "0x7235a8bb8469a25df30314ef927f2f8b549866208bd37a12a82be90d3e47413f",
+      "status": "FINALIZED",
+      "execution": "FINISHED_WITH_RETURN",
+      "consensus": "MAJORITY_AGREE",
+      "leaderOnly": false
+    }
+  },
+  "baseline": "f028fdca975fdb0a9821a74676338cf1b315c224",
+  "sourceRelease": "0.3.0",
+  "tests": {
+    "sdk": 219,
+    "sdkAdded": 27,
+    "contracts": 90,
+    "contractsAdded": 26
+  },
+  "sourceMatchesGenerator": true
+}

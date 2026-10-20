@@ -1,0 +1,53 @@
+{
+  "checkpoints": [
+    {
+      "actor": "0x0d0416a49ecb3437a827ee0605c54b2c88352689",
+      "artifactHash": "0x13cd784a6c31361f0e0c6aa3b410a1cb9a079868b7314c13e3eb8a75351746b9",
+      "id": "LEGAL",
+      "oracles": [
+        "LICENSE"
+      ],
+      "requires": []
+    },
+    {
+      "actor": "0x0d0416a49ecb3437a827ee0605c54b2c88352689",
+      "artifactHash": "0x13cd784a6c31361f0e0c6aa3b410a1cb9a079868b7314c13e3eb8a75351746b9",
+      "id": "RELEASE",
+      "oracles": [
+        "LICENSE",
+        "WARRANTY"
+      ],
+      "requires": [
+        "LEGAL"
+      ]
+    }
+  ],
+  "oracles": [
+    {
+      "allowedOutcomes": [
+        "PERMITTED"
+      ],
+      "contractAddress": "0xf91789141312a8fe22c50489e2aafd0af645f2e7",
+      "expectedSpecHash": "0xe0772dcfcda9d27b345b491c238273f4785e166cf310b970413dafbe6cc78d0d",
+      "id": "LICENSE",
+      "marketId": "OPENZEPPELIN-LICENSE-PERMISSION",
+      "maxAgeSeconds": 31536000,
+      "minimumConfidenceBps": 8500,
+      "minimumSources": 1
+    },
+    {
+      "allowedOutcomes": [
+        "DISCLAIMED"
+      ],
+      "contractAddress": "0x55943c4e7e61de3654db6ecacb8cd3e915408c05",
+      "expectedSpecHash": "0x639f276e20d6e34a6f7faab84ccbd4255e19a41073fab07def0983449e490c3d",
+      "id": "WARRANTY",
+      "marketId": "OPENZEPPELIN-WARRANTY-DISCLAIMER",
+      "maxAgeSeconds": 3600,
+      "minimumConfidenceBps": 8500,
+      "minimumSources": 1
+    }
+  ],
+  "version": 1,
+  "workflowId": "OPENZEPPELIN-RELEASE-GATES"
+}

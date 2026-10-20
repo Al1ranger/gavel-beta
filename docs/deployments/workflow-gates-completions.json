@@ -1,0 +1,59 @@
+[
+  {
+    "actor": "0x0d0416a49ecb3437a827ee0605c54b2c88352689",
+    "artifactHash": "0x13cd784a6c31361f0e0c6aa3b410a1cb9a079868b7314c13e3eb8a75351746b9",
+    "checkpointId": "LEGAL",
+    "completedAt": 1792478596,
+    "dependencies": [],
+    "manifestHash": "0x5bf52fae14bf76d6e16c92f451dc6763698660a97bd2817e0fb45c8ed1aa57fa",
+    "oracles": [
+      {
+        "contractAddress": "0xf91789141312a8fe22c50489e2aafd0af645f2e7",
+        "evidenceDigest": "0x8e344319056ddaa54cba6d508f77838f5260d6cab3076b05c73be1028a67aad2",
+        "id": "LICENSE",
+        "observedAt": 1791521411,
+        "outcomeId": "PERMITTED",
+        "specHash": "0xe0772dcfcda9d27b345b491c238273f4785e166cf310b970413dafbe6cc78d0d"
+      }
+    ],
+    "receiptHash": "0x86b9acd8e2ad6450443639d8c2f7fb2807aef2a9eb224129be0182f6d9c5ed9d",
+    "sequence": 1,
+    "version": 1,
+    "workflowId": "OPENZEPPELIN-RELEASE-GATES"
+  },
+  {
+    "actor": "0x0d0416a49ecb3437a827ee0605c54b2c88352689",
+    "artifactHash": "0x13cd784a6c31361f0e0c6aa3b410a1cb9a079868b7314c13e3eb8a75351746b9",
+    "checkpointId": "RELEASE",
+    "completedAt": 1792479172,
+    "dependencies": [
+      {
+        "checkpointId": "LEGAL",
+        "receiptHash": "0x86b9acd8e2ad6450443639d8c2f7fb2807aef2a9eb224129be0182f6d9c5ed9d"
+      }
+    ],
+    "manifestHash": "0x5bf52fae14bf76d6e16c92f451dc6763698660a97bd2817e0fb45c8ed1aa57fa",
+    "oracles": [
+      {
+        "contractAddress": "0xf91789141312a8fe22c50489e2aafd0af645f2e7",
+        "evidenceDigest": "0x8e344319056ddaa54cba6d508f77838f5260d6cab3076b05c73be1028a67aad2",
+        "id": "LICENSE",
+        "observedAt": 1791521411,
+        "outcomeId": "PERMITTED",
+        "specHash": "0xe0772dcfcda9d27b345b491c238273f4785e166cf310b970413dafbe6cc78d0d"
+      },
+      {
+        "contractAddress": "0x55943c4e7e61de3654db6ecacb8cd3e915408c05",
+        "evidenceDigest": "0x8e344319056ddaa54cba6d508f77838f5260d6cab3076b05c73be1028a67aad2",
+        "id": "WARRANTY",
+        "observedAt": 1792479098,
+        "outcomeId": "DISCLAIMED",
+        "specHash": "0x639f276e20d6e34a6f7faab84ccbd4255e19a41073fab07def0983449e490c3d"
+      }
+    ],
+    "receiptHash": "0xc791a1f9d86293da8898875b59b047e1d24da94cb8f47fcfa128cbfecb3f737a",
+    "sequence": 2,
+    "version": 1,
+    "workflowId": "OPENZEPPELIN-RELEASE-GATES"
+  }
+]

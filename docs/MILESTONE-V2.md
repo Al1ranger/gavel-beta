@@ -22,8 +22,36 @@ The generated workflow and warranty resolver pass GenVM lint/validation.
 Strict TypeScript consumer declarations compile; the packed source release
 includes compiled workflow exports and the integration guide.
 
-Live verification is in progress. A final evidence manifest will record only
-observed finalized transactions, source hashes and completion receipts.
+Live Studio Next verification finalized nine transactions with majority
+agreement and leader-only mode disabled: two deployments, one new oracle
+resolution, two checkpoint completions, three rejected calls and one replay.
+The rejected calls exercise missing prerequisite, unauthorized actor and
+not-yet-resolved oracle (VERDICT_NOT_AVAILABLE). Final progress is 2/2; replay
+returned the same completion receipt and did not increase the count.
+
+The gate's deployed source matches this generator exactly. LEGAL requires a
+redistribution judgment; RELEASE requires LEGAL and both redistribution and
+warranty-disclaimer judgments. The new warranty resolver deployment is reused
+from the first integration attempt after source-hash verification.
+
+## Submission title
+
+Gavel SDK: onchain workflow gates and multi-oracle composition
+
+## Changes & Improvements (890 / 1000 characters)
+
+Added an onchain workflow engine that composes multiple Gavel resolvers into immutable approval checkpoints. Each checkpoint binds an actor, artifact hash, prerequisites and pinned oracle policies. The contract reads resolver state directly and rejects unauthorized callers, missing prerequisites, unresolved judgments, unsatisfied mandatory rules, stale evidence or disallowed outcomes before changing state. Successful completions store hash-linked receipts; replay returns the original receipt without advancing progress. New SDK clients, generation/audit CLI commands and dependency-chain audits support integration. This extends v1's backend callbacks with contract-enforced downstream state transitions. All 219 SDK and 90 contract tests pass, including 53 new cases. Live Studio Next verification completed two checkpoints, blocked three invalid calls and confirmed unchanged replay.
+
+## Evidence
+
+- [Delta from accepted v1](https://github.com/Al1ranger/gavel-beta/compare/f028fdc...main)
+- [Live deployment, transaction results and receipts](deployments/workflow-gates-studio-next.json)
+- [Pinned workflow manifest](deployments/workflow-gates-manifest.json)
+- [Completion receipt chain](deployments/workflow-gates-completions.json)
+- [Live gate](https://explorer-studio-dev.genlayer.com/address/0x0125160cc18E74E3F09f203c55697A0f19f60D78)
+- [Successful downstream completion](https://explorer-studio-dev.genlayer.com/tx/0xe02ca5d81231bd683f33f620a8ca338500a6ba7eed67ef9ef51ecf4ca7908d50)
+- [Replay](https://explorer-studio-dev.genlayer.com/tx/0x4ab5571fc5e149fc986ab42773d5f0f6ba833ac31d193715774e60661012f832)
+- [Public integration guide](https://gavel-beta-sdk.vercel.app/docs/#workflow-gates)
 
 ## Reproduce
 
@@ -34,6 +62,9 @@ pip install genlayer-test==0.29.2 genvm-linter==0.11.0
 npm run test:contracts
 node examples/workflow-contract.ts
 genvm-lint check artifacts/workflow-demo/gate.py
+node bin/gavel.mjs audit-workflow docs/deployments/workflow-gates-manifest.json docs/deployments/workflow-gates-completions.json
+npm ci --prefix examples/live-resolution-action
+node examples/live-resolution-action/verify-workflow.mjs
 ```
 
 The generated example uses placeholder actor/artifact identities; replace them
