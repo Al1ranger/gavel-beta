@@ -77,6 +77,25 @@ node bin/gavel.mjs audit-resolution artifacts/resolution-action-demo/bundle.json
 The example uses an explicitly synthetic RPC and releases one local job. Reruns
 perform zero additional writes. [Integration API and trust model](docs/RESOLUTION-ACTIONS.md).
 
+## Onchain workflow gates (0.3.0 source release)
+
+Compose categorical resolvers into an immutable dependency graph on GenLayer.
+Every checkpoint pins an actor, artifact hash, oracle addresses/specifications,
+allowed outcomes, confidence, source count and freshness. `complete` reads the
+configured contracts itself and records a hash-linked completion only after
+all checks and prerequisite checkpoints pass. No uploaded verdict can unlock it.
+
+```bash
+npm ci
+npm run build
+node examples/workflow-contract.ts
+node bin/gavel.mjs generate-workflow artifacts/workflow-demo/manifest.json artifacts/workflow-demo/another-gate.py
+```
+
+Replace example identities and artifact hashes before deploying. This is an
+onchain checkpoint registry, with no payment or external release handler.
+[Workflow API, live verification and trust model](docs/WORKFLOW-GATES.md).
+
 ## Oracle modes
 
 | Generator | Result | Use case |

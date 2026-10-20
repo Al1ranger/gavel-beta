@@ -18,5 +18,6 @@ export * from './recipes.ts';
 export * from './oracleClient.ts';
 export * from './resolutionAudit.ts';
 export * from './resolutionActions.ts';
+export * from './workflow.ts';
 export { Gavel } from './gavel.ts';
 export type { GavelConfig, Submitted } from './gavel.ts';

@@ -13,6 +13,16 @@ node examples/resolution-action.ts
 node bin/gavel.mjs audit-resolution artifacts/resolution-action-demo/bundle.json artifacts/resolution-action-demo/policy.json</pre>
 <p>The reproducible local demo uses synthetic RPC data. It releases one test job; reruns perform no additional writes. This feature is in the 0.2.0 source release; the registry version remains 0.1.4. <a href="https://github.com/Al1ranger/gavel-beta/blob/main/docs/RESOLUTION-ACTIONS.md">Integration guide, verification rules and recovery limits →</a></p>
 <p>Live integration verified on Studio Next: a finalized judgment released one local job; replay and process restart produced zero additional writes. No token settlement is claimed. 192 SDK tests pass, including 42 new action/audit cases. <a href="https://github.com/Al1ranger/gavel-beta/blob/main/docs/MILESTONE-V1.md">Milestone evidence and reproduction →</a></p>
+<h2 id="workflow-gates">Onchain workflow gates · 0.3.0 source release</h2>
+<p>Compose categorical resolvers into an immutable workflow on GenLayer. Each checkpoint pins its actor, artifact hash and oracle policies. A completion transaction reads the configured resolver contracts and checks their specifications, outcomes, mandatory rules, evidence and freshness before writing a receipt. Downstream checkpoints require their prerequisites' stored receipts.</p>
+<p>Multiple oracle checks use AND semantics. There is no policy override or caller-supplied verdict. Receipt-chain audits verify dependency links; offline JSON does not authenticate chain finality. This records artifact approval in an onchain registry; it does not publish software or transfer tokens.</p>
+<pre>git clone https://github.com/Al1ranger/gavel-beta.git
+cd gavel-beta
+npm ci
+npm run build
+node examples/workflow-contract.ts
+node bin/gavel.mjs generate-workflow artifacts/workflow-demo/manifest.json artifacts/workflow-demo/new-gate.py</pre>
+<p>Replace the example actor and artifact hash before deployment. Use the source checkout for 0.3.0 features. <a href="https://github.com/Al1ranger/gavel-beta/blob/main/docs/WORKFLOW-GATES.md">Workflow API and trust model →</a> · <a href="https://github.com/Al1ranger/gavel-beta/blob/main/docs/MILESTONE-V2.md">Milestone delta and verification →</a></p>
 <h2>Studio Next deployment</h2><pre>npx gavel prepare-studio-next contract.py studio-next-deployment
 cd studio-next-deployment
 npx --yes genlayer@0.40.0-rc.3 network set studio-dev

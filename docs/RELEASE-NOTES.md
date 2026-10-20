@@ -1,5 +1,22 @@
 # Release notes
 
+## 0.3.0 — onchain workflow gates (source release)
+
+- Generate immutable GenLayer workflow contracts from bounded, cycle-checked
+  dependency graphs. Bind checkpoint actors, artifact hashes and resolver policy.
+- Read configured categorical contracts directly during completion; verify
+  pinned specifications, allowed outcomes, mandatory rules/features, evidence
+  commitments, exact supporting quotes, confidence and age.
+- Persist one completion per checkpoint, linking prerequisite receipt hashes and
+  oracle snapshots. Failed checks write no completion; replay returns the same
+  receipt without increasing the completion count.
+- New `gavel-judgment-sdk/workflow` entry point, finalized-state reader,
+  signer-owned write requests, and offline dependency-closure audit.
+- CLI commands `generate-workflow` and `audit-workflow`; reproducible generation,
+  live integration, API guide and 27 new SDK / 26 new contract tests.
+- Source release: registry installation remains the previous published version
+  until a separate npm release succeeds. Build this checkout to use these APIs.
+
 ## 0.2.0 — resolution actions
 
 - New `gavel-judgment-sdk/resolution` entry point: verified finalized resolution
