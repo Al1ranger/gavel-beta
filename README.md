@@ -7,10 +7,10 @@ Gavel Beta turns a typed JavaScript specification into a pinned, deployable GenL
 ## Install
 
 ```bash
-npm i gavel-judgment-sdk
+npm i gavel-judgment-sdk@0.3.0
 ```
 
-Node.js 22.13 or newer is required. npm version 0.1.4 enforces mandatory resolution rules through leader and validator paths. See [release notes](docs/RELEASE-NOTES.md) and the [Studio Next guide](docs/STUDIO-NEXT.md).
+Node.js 22.13 or newer is required. Version 0.3.0 includes onchain workflow gates, finalized resolution actions, and mandatory resolution rules enforced through leader and validator paths. See [release notes](docs/RELEASE-NOTES.md) and the [Studio Next guide](docs/STUDIO-NEXT.md).
 
 The published npm package and CLI retain their `gavel-judgment-sdk` and `gavel` names for compatibility during the beta rename.
 
@@ -77,13 +77,20 @@ node bin/gavel.mjs audit-resolution artifacts/resolution-action-demo/bundle.json
 The example uses an explicitly synthetic RPC and releases one local job. Reruns
 perform zero additional writes. [Integration API and trust model](docs/RESOLUTION-ACTIONS.md).
 
-## Onchain workflow gates (0.3.0 source release)
+## Onchain workflow gates (0.3.0)
 
 Compose categorical resolvers into an immutable dependency graph on GenLayer.
 Every checkpoint pins an actor, artifact hash, oracle addresses/specifications,
 allowed outcomes, confidence, source count and freshness. `complete` reads the
 configured contracts itself and records a hash-linked completion only after
 all checks and prerequisite checkpoints pass. No uploaded verdict can unlock it.
+
+```bash
+npm i gavel-judgment-sdk@0.3.0
+npx gavel generate-workflow manifest.json gate.py
+```
+
+To reproduce the example from a source checkout:
 
 ```bash
 npm ci

@@ -77,5 +77,6 @@ for a subsequent onchain completion. No token transfer, software publication,
 escrow payout or legal certification is claimed. The two license-fixture
 resolvers share an immutable document; this is composition, not independent
 source diversity. Completed checkpoints preserve historical approval and are
-not revoked when an oracle later changes. New APIs are in the 0.3.0 source
-release; no npm 0.3.0 publication is claimed.
+not revoked when an oracle later changes. New APIs are published in
+[`gavel-judgment-sdk@0.3.0`](https://www.npmjs.com/package/gavel-judgment-sdk/v/0.3.0).
+Install with `npm install gavel-judgment-sdk@0.3.0`.

@@ -1,6 +1,6 @@
 # Release notes
 
-## 0.3.0 — onchain workflow gates (source release)
+## 0.3.0 — onchain workflow gates
 
 - Generate immutable GenLayer workflow contracts from bounded, cycle-checked
   dependency graphs. Bind checkpoint actors, artifact hashes and resolver policy.
@@ -14,8 +14,8 @@
   signer-owned write requests, and offline dependency-closure audit.
 - CLI commands `generate-workflow` and `audit-workflow`; reproducible generation,
   live integration, API guide and 27 new SDK / 26 new contract tests.
-- Source release: registry installation remains the previous published version
-  until a separate npm release succeeds. Build this checkout to use these APIs.
+- Install with `npm install gavel-judgment-sdk@0.3.0`. This version includes both
+  the workflow APIs and the resolution-action APIs introduced in 0.2.0.
 
 ## 0.2.0 — resolution actions
 

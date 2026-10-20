@@ -14,6 +14,16 @@ software release, certify legal compliance, transfer tokens or operate escrow.
 
 ## Generate and deploy
 
+Install the SDK and generate a contract from your reviewed workflow manifest:
+
+```bash
+npm install gavel-judgment-sdk@0.3.0
+npx gavel generate-workflow manifest.json gate.py
+```
+
+The package exports `gavel-judgment-sdk/workflow` and includes the
+`generate-workflow` and `audit-workflow` CLI commands. To reproduce the source example:
+
 ```bash
 git clone https://github.com/Al1ranger/gavel-beta.git
 cd gavel-beta
