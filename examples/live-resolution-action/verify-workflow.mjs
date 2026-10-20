@@ -28,7 +28,7 @@ for(const checkpoint of proof.manifest.checkpoints){
   assert.equal((await gate.preview(checkpoint.id)).value.status,'COMPLETED');
 }
 assert.equal(auditWorkflowChain(proof.manifest,receipts).integrity,'VERIFIED');
-const expectedErrors={missingDependency:'CHECKPOINT_DEPENDENCY_REQUIRED',unauthorizedActor:'CHECKPOINT_ACTOR_REQUIRED',unresolvedOracle:'ORACLE_UNRESOLVED'};
+const expectedErrors={missingDependency:'CHECKPOINT_DEPENDENCY_REQUIRED',unauthorizedActor:'CHECKPOINT_ACTOR_REQUIRED',unresolvedOracle:'VERDICT_NOT_AVAILABLE'};
 for(const [name,hash]of Object.entries(proof.transactions)){
   const receipt=await client.getTransaction({hash});assert.equal(receipt.statusName,'FINALIZED');
   assert.equal(receipt.txExecutionResultName,expectedErrors[name]?'FINISHED_WITH_ERROR':'FINISHED_WITH_RETURN');

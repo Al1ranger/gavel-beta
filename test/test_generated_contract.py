@@ -15,7 +15,7 @@ def generated(tmp_path, direct_deploy):
     )
     path = tmp_path / 'earthquake.py'
     path.write_text(source, encoding='utf-8')
-    return direct_deploy(str(path))
+    return direct_deploy(str(path), sdk_version="v0.2.16")
 
 @pytest.mark.parametrize('reviewed,expected', [(True, 'RESOLVED'), (False, 'UNRESOLVED')])
 def test_required_review_controls_resolution(generated, reviewed, expected):

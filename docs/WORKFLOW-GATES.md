@@ -168,4 +168,6 @@ python -m pytest test/test_oracles.py test/test_workflow.py -q -s -p no:cachepro
 
 Contract tests execute generated Python and real storage with mocked
 cross-contract transport. They test policy rejection and atomic state; they do
-not establish consensus. Live transaction evidence is recorded separately.
+not establish consensus. The test harness pins archive v0.2.16, which contains
+the exact runner hash declared by the generated contracts. Live transaction
+evidence is recorded separately.

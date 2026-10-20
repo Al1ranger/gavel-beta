@@ -24,7 +24,7 @@ def deploy(artifacts, direct_vm, direct_deploy, direct_alice):
     direct_vm.sender = direct_alice
     direct_vm.warp("2026-09-12T12:00:00Z")
     def load(name):
-        return direct_deploy(str(artifacts / name))
+        return direct_deploy(str(artifacts / name), sdk_version="v0.2.16")
     return load
 
 

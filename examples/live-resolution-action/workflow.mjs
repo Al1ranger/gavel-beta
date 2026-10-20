@@ -91,7 +91,7 @@ await step('missingDependency',()=>write(client,'RELEASE'),false,'CHECKPOINT_DEP
 await step('unauthorizedActor',()=>write(other,'LEGAL'),false,'CHECKPOINT_ACTOR_REQUIRED');
 await step('legalCompletion',()=>write(client,'LEGAL'));
 assert.equal((await read.preview('RELEASE')).value.status,'BLOCKED');
-await step('unresolvedOracle',()=>write(client,'RELEASE'),false,'ORACLE_UNRESOLVED');
+await step('unresolvedOracle',()=>write(client,'RELEASE'),false,'VERDICT_NOT_AVAILABLE');
 await step('oracleResolution',async()=>client.writeContract({address:deployedOracle.address,functionName:'resolve',args:[],value:0n,fees:await fees()}));
 const oracleVerdict=JSON.parse(await client.readContract({address:deployedOracle.address,functionName:'get_verdict',args:[],transactionHashVariant:TransactionHashVariant.LATEST_FINAL}));
 assert.equal(oracleVerdict.status,'RESOLVED');assert.equal(oracleVerdict.outcomeId,'DISCLAIMED');

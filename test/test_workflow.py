@@ -39,7 +39,7 @@ def workflow(tmp_path, direct_vm, direct_deploy, direct_alice, monkeypatch):
     subprocess.run(["node", "bin/gavel.mjs", "generate-workflow", str(tmp_path / "manifest.json"), str(tmp_path / "gate.py")], cwd=ROOT, check=True, capture_output=True)
     direct_vm.sender = direct_alice
     direct_vm.warp("2026-10-19T00:00:00Z")
-    gate = direct_deploy(str(tmp_path / "gate.py"))
+    gate = direct_deploy(str(tmp_path / "gate.py"), sdk_version="v0.2.16")
     module = sys.modules[type(object.__getattribute__(gate, "_instance")).__module__]
     reads = []
 

@@ -78,7 +78,7 @@
     "lint": "tsc -p tsconfig.build.json --noEmit",
     "pretest": "npm run build",
     "generate:examples": "node examples/generate-suite.ts",
-    "test:contracts": "python -m pytest test/test_generated_contract.py test/test_oracles.py test/test_workflow.py -v",
+    "test:contracts": "python -m pytest test/test_generated_contract.py test/test_oracles.py test/test_workflow.py -v -s",
     "test:integration": "gltest test/integration/ -v -s --network localnet",
     "prepack": "npm run build",
     "test": "node --test test/*.test.ts",
