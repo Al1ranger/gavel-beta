@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-26T06:47:05.644Z",
+  "baselineCommit": "02e8e507b77c5cc82a02fa1bfb4009def56f5fc5",
+  "sourceCandidate": "0.4.0",
+  "sdk": {
+    "tests": 259,
+    "passed": 259,
+    "added": 40
+  },
+  "contracts": {
+    "tests": 133,
+    "passed": 133,
+    "added": 43
+  },
+  "strictPublicDeclarations": "passed with skipLibCheck=false",
+  "genvm": {
+    "lint": "passed",
+    "semanticValidation": "passed",
+    "runner": "1jb45aa8ynh2a9c9xn3b7qqh8sm5q93hwfp7jqmwsfhh8jpz09h6",
+    "archive": "v0.2.16",
+    "generatedSourceSha256": "a9d55b16b9c243fe9d594af2aff79c92b46debccbe1c6effb3ad863066348c08"
+  },
+  "publishedWorkflowSourceSha256": "6ae39c6eed0447b2c532dc69f22a002982b5565f2b89485a770da1685811bee2",
+  "publishedWorkflowSourceUnchanged": true,
+  "packageContentsVerified": true,
+  "scope": "Actual generated Python contract and real storage; cross-contract oracle transport mocked. Offline audit hashes do not authenticate chain finality. No new live lease deployment, public consensus, npm publication or external job execution claimed.",
+  "livePreflight": {
+    "chainId": 61997,
+    "readOnly": true,
+    "healthy": false,
+    "rpcCode": -32603
+  }
+}

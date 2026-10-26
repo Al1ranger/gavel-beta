@@ -12,6 +12,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm test
+      - run: npm run test:lease-types
       - run: npm pack --dry-run
   contracts:
     runs-on: ubuntu-latest
@@ -29,4 +30,6 @@ jobs:
       - run: pip install genlayer-test==0.29.2 genvm-linter==0.11.0
       - run: node examples/workflow-contract.ts artifacts/workflow-check
       - run: genvm-lint check artifacts/workflow-check/gate.py
+      - run: node examples/lease-contract.ts artifacts/lease-check
+      - run: genvm-lint check artifacts/lease-check/gate.py
       - run: npm run test:contracts

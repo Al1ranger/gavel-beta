@@ -1,6 +1,6 @@
 {
   "name": "gavel-judgment-sdk",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "type": "module",
   "description": "TypeScript SDK for Gavel Beta prediction market resolution and GenLayer courts",
   "repository": {
@@ -14,6 +14,10 @@
   },
   "types": "./dist/index.d.ts",
   "exports": {
+    "./leases": {
+      "types": "./dist/leases.d.ts",
+      "import": "./dist/leases.js"
+    },
     "./workflow": {
       "types": "./dist/workflow.d.ts",
       "import": "./dist/workflow.js"
@@ -58,6 +62,7 @@
     "docs/RELEASE-NOTES.md",
     "docs/RESOLUTION-ACTIONS.md",
     "docs/WORKFLOW-GATES.md",
+    "docs/AUTHORIZATION-LEASES.md",
     "docs/deployments",
     "docs/REAL-WORLD-JUDGMENTS.md",
     "docs/STUDIONET-DEPLOYMENTS.md",
@@ -78,7 +83,8 @@
     "lint": "tsc -p tsconfig.build.json --noEmit",
     "pretest": "npm run build",
     "generate:examples": "node examples/generate-suite.ts",
-    "test:contracts": "python -m pytest test/test_generated_contract.py test/test_oracles.py test/test_workflow.py -v -s",
+    "test:contracts": "python -m pytest test/test_generated_contract.py test/test_oracles.py test/test_workflow.py test/test_leases.py -v -s",
+    "test:lease-types": "tsc --noEmit --strict --skipLibCheck false --module NodeNext --target ES2022 test/lease-public-types.ts",
     "test:integration": "gltest test/integration/ -v -s --network localnet",
     "prepack": "npm run build",
     "test": "node --test test/*.test.ts",

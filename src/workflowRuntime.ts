@@ -175,3 +175,9 @@ class __WORKFLOW_CLASS__(gl.Contract):
         self.completed_count = u32(int(self.completed_count) + 1)
         return encoded
 `;
+
+// Keep the new lease gate on the same substantive oracle checks as workflows.
+// A marker change fails generation rather than silently dropping the verifier.
+const oracleBoundary = workflowRuntime.indexOf('\n\nclass __WORKFLOW_CLASS__');
+if (oracleBoundary < 0) throw new Error('ORACLE_RUNTIME_BOUNDARY_MISSING');
+export const oracleVerificationRuntime = workflowRuntime.slice(0, oracleBoundary);

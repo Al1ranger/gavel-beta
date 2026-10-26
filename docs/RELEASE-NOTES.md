@@ -1,5 +1,19 @@
 # Release notes
 
+## 0.4.0 — authorization leases (source candidate)
+
+- New generated lease gate for temporary, bounded job admission. New uses read
+  finalized resolver state and recheck pinned specifications, mandatory rules,
+  evidence commitments, source coverage, exact quotes, confidence and freshness.
+- Atomic epoch renewal, observation-bounded expiry, immutable lifetime quotas,
+  permanent controller revocation and replay-safe consumption journals.
+- Domain-bound grants, consumption/revocation records, finalized-state reader,
+  unsigned requests, offline integrity audits and generation/audit CLI commands.
+- New `gavel-judgment-sdk/leases` export, reproducible generation example and
+  adversarial tests. Existing workflow completion semantics are unchanged.
+- Source release candidate only; this section does not claim npm publication,
+  public-network consensus, token transfers or external job execution.
+
 ## 0.3.0 — onchain workflow gates
 
 - Generate immutable GenLayer workflow contracts from bounded, cycle-checked

@@ -53,6 +53,25 @@ const contract = generateIntelligentContract({
 });
 ```
 
+## Authorization leases (source candidate 0.4.0)
+
+Grant temporary, budgeted agent access that rechecks finalized oracle policy on
+every new use. Renewal changes the epoch without resetting lifetime quotas;
+expiry, failed evidence or permanent controller revocation blocks new jobs.
+Consumption receipts bind deployment, capability, resource and request commitment.
+
+```bash
+npm run build
+node examples/lease-contract.ts
+node bin/gavel.mjs generate-leases policy.json gate.py
+node bin/gavel.mjs audit-lease manifest.json bundle.json
+```
+
+The new `gavel-judgment-sdk/leases` API supplies generation, finalized reads,
+unsigned requests and portable audits. Receipts record job admission, not job
+execution. [Lifecycle, limits and exact integration path](docs/AUTHORIZATION-LEASES.md).
+This source candidate is separate from the currently documented npm 0.3.0 release.
+
 ## Finalized resolution actions (0.2.0)
 
 `gavel-judgment-sdk/resolution` connects a generated categorical verdict to an
