@@ -124,6 +124,20 @@ test('client pins deployment and manifest, reads finalized history, builds unsig
   assert.throws(() => client.renewRequest('UNKNOWN', 0), /UNKNOWN/);
   assert.throws(() => client.consumeRequest('BUILD-JOBS', 0, requestId));
 });
+test('lease RPC calls and requests use checksummed addresses while receipts stay lowercase', async () => {
+  const f = fixture();
+  const checksummed = '0x52908400098527886E0F7030069857D2E4169EE7';
+  const lowercase = '0x52908400098527886e0f7030069857d2e4169ee7';
+  const client = createLeaseClient({chainId: 61997, contractAddress: lowercase, expectedManifest: f.manifest,
+    reader: {async getChainId() { return 61997; }, async readContract(q) {
+      assert.equal(q.address, checksummed);
+      return q.functionName === 'get_manifest' ? f.manifest :
+        {...f.grant, contractAddress: lowercase, used: 0, maxUses: 3, revoked: false, status: 'ACTIVE', blockers: []};
+    }}});
+  assert.equal((await client.preview('BUILD-JOBS')).value.contractAddress, lowercase);
+  assert.equal(client.renewRequest('BUILD-JOBS', 1).address, checksummed);
+});
+
 test('RPC errors are sanitized and a contradictory active preview is rejected', async () => {
   const f = fixture(); let fail = false;
   const client = createLeaseClient({chainId: 61997, contractAddress: address, expectedManifest: f.manifest,

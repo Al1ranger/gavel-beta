@@ -55,27 +55,49 @@ npm run test:contracts
 
 ## Verification
 
-- **259 SDK tests pass**, including 40 new lease cases.
+- **260 SDK tests pass**, including 41 new lease cases.
 - **133 contract tests pass**, including 43 new lease cases.
 - Generated lease source passes GenVM AST lint and semantic/schema validation.
 - Public root/subpath declarations compile with strict TypeScript and
   `skipLibCheck=false` using the documented structural reader interface.
+- The lease SDK checksums deployment addresses for Studio Next RPC calls while
+  preserving canonical lowercase addresses in receipts and digests.
 - Package checks include compiled lease exports, declarations, runtime and guide.
 - The generated source of the existing published workflow still hashes to
   `6ae39c6eed0447b2c532dc69f22a002982b5565f2b89485a770da1685811bee2`.
 - [Machine-readable verification report](verification/authorization-leases.json).
+
+## Studio Next verification
+
+The [deployed lease gate](https://explorer-studio-dev.genlayer.com/address/0x94E0C78A432Ac2E8BB8476305380EFDEF59aa382)
+on chain 61997 matched the generated source byte for byte. Seven transactions
+finalized with majority agreement. The gate opened against the finalized
+license resolver, admitted one request, and carried the spent use into epoch 2.
+After controller revocation, replay preserved the original receipt and a fresh
+request reverted with `LEASE_REVOKED`. Finalized state showed one use and
+`REVOKED`. [Deployment proof and receipts](deployments/authorization-leases-studio-next.json).
+
+To rerun the public testnet demo from the repository root:
+
+```sh
+npm ci
+npm run build
+npm ci --prefix examples/live-resolution-action
+node examples/live-resolution-action/verify-leases.mjs
+```
+
+The demo uses fresh in-memory signers and Studio faucet funds. It requires the
+committed license resolver to be available within the configured 90-day
+observation window. It records the submitted hashes under `artifacts/` before
+polling. If interrupted, inspect those hashes before sending another transaction.
 
 ## Scope
 
 Source candidate version: **0.4.0**. npm publication is not claimed. The current
 README installation command continues to point at the existing npm 0.3.0 release.
 
-The Studio Next read-only preflight on October 25 returned RPC error `-32603`
-when reading the previously deployed v2 workflow. No new lease deployment,
-public-network consensus, token transfer or external job execution is claimed.
-The tests mock oracle transport; their result does not establish live finality.
-
-The contract records admission of one payload commitment to one resource.
+The contract records admission of one payload commitment to one resource. The
+Studio demo exercises contract state with test GEN and performs no external job.
 Applications must bind the request hash to actual job arguments and deduplicate
 external execution. Historical replay acknowledges an earlier admission even
 after expiry/revocation; it does not grant current access. Offline hashes return
@@ -88,13 +110,14 @@ by multiple configured addresses.
 
 Gavel SDK: expiring, revocable authorization leases
 
-## Changes & Improvements (947 / 1000 characters)
+## Changes & Improvements (825 / 1000 characters)
 
-Added a new GenLayer lease gate for bounded agent/job access, extending v2's permanent workflow checkpoints with expiring authorization. Each capability pins a subject, resource hash, lifetime use cap and oracle policy. Opening, renewal and every new use recheck finalized resolver state, mandatory rules, confidence, evidence hashes, quotes and freshness. Leases cannot outlive their observations; renewal changes the epoch without resetting the use cap. Controller revocation permanently blocks new uses. Domain-bound grant and consumption receipts prevent cross-deployment substitution; replay returns only its historical receipt. Added finalized-state SDK reads, unsigned requests, portable integrity audits, generation/audit CLI and integration docs. All 259 SDK and 133 contract tests pass, including 83 new cases and Python-to-TypeScript audit parity. Version 0.4.0 is a source candidate; live consensus and npm publication are not claimed.
+Built a GenLayer authorization gate for time-limited agent and job access. Each capability binds a subject, resource hash, lifetime quota and oracle policy. Opening, renewal and every new use recheck finalized judgments, mandatory rules, confidence, evidence and freshness. Renewal preserves spent quota, and controller revocation blocks new uses. Added a contract generator, finalized-state SDK client, unsigned requests and a CLI for portable receipt audits. On Studio Next (61997), seven transactions finalized with majority agreement. The gate admitted one request, renewed without restoring quota, preserved the historical receipt on replay and rejected a fresh request after revocation. Published the contract, transaction hashes and reproducible demo in the project repository. All 260 SDK and 133 contract tests pass.
 
 ## Evidence
 
 - [Delta from v2](https://github.com/Al1ranger/gavel-beta/compare/02e8e50...main)
+- [Studio Next deployment proof](deployments/authorization-leases-studio-next.json)
 - [Lease generator and public API](https://github.com/Al1ranger/gavel-beta/blob/main/src/leases.ts)
 - [Contract state machine](https://github.com/Al1ranger/gavel-beta/blob/main/src/leaseRuntime.ts)
 - [Contract regressions](https://github.com/Al1ranger/gavel-beta/blob/main/test/test_leases.py)

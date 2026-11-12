@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-26T06:47:05.644Z",
+  "checkedAt": "2026-11-12T07:51:46.190Z",
   "baselineCommit": "02e8e507b77c5cc82a02fa1bfb4009def56f5fc5",
   "sourceCandidate": "0.4.0",
   "sdk": {
-    "tests": 259,
-    "passed": 259,
-    "added": 40
+    "tests": 260,
+    "passed": 260,
+    "added": 41
   },
   "contracts": {
     "tests": 133,
@@ -24,11 +24,14 @@
   "publishedWorkflowSourceSha256": "6ae39c6eed0447b2c532dc69f22a002982b5565f2b89485a770da1685811bee2",
   "publishedWorkflowSourceUnchanged": true,
   "packageContentsVerified": true,
-  "scope": "Actual generated Python contract and real storage; cross-contract oracle transport mocked. Offline audit hashes do not authenticate chain finality. No new live lease deployment, public consensus, npm publication or external job execution claimed.",
-  "livePreflight": {
+  "scope": "Direct tests exercise generated Python and storage with mocked oracle transport. The separate Studio Next run verifies public consensus and finalized reads with faucet-funded signers.",
+  "liveVerification": {
     "chainId": 61997,
-    "readOnly": true,
-    "healthy": false,
-    "rpcCode": -32603
+    "deployment": "0x94E0C78A432Ac2E8BB8476305380EFDEF59aa382",
+    "finalizedTransactions": 7,
+    "consensus": "MAJORITY_AGREE",
+    "finalizedUses": 1,
+    "finalizedState": "REVOKED",
+    "evidence": "../deployments/authorization-leases-studio-next.json"
   }
 }

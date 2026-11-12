@@ -1,0 +1,198 @@
+{
+  "checkedAt": "2026-11-12T07:51:46.190Z",
+  "chainId": 61997,
+  "address": "0x94E0C78A432Ac2E8BB8476305380EFDEF59aa382",
+  "sourceSha256": "814dc22e6b5255300efda2263713f43ce8db923336860ab62f546ba8f52150c0",
+  "manifest": {
+    "capabilities": [
+      {
+        "id": "BUILD-JOB",
+        "leaseSeconds": 3600,
+        "maxUses": 2,
+        "oracles": [
+          "LICENSE"
+        ],
+        "resourceHash": "0x4dc49318ef518ea553e7f891af66ab6b163486e3da418209fa8c487e302ff27e",
+        "subject": "0xfd2da29fcbc354df989a13d1a200f2b5f6fa6c0e"
+      }
+    ],
+    "controller": "0x47f0426ec3408d64f49c376ee234bb48e8d3bc8b",
+    "gateId": "LEASE-STUDIO-NEXT",
+    "kind": "GAVEL_LEASE_GATE",
+    "oracles": [
+      {
+        "allowedOutcomes": [
+          "PERMITTED"
+        ],
+        "contractAddress": "0xf91789141312a8fe22c50489e2aafd0af645f2e7",
+        "expectedSpecHash": "0xe0772dcfcda9d27b345b491c238273f4785e166cf310b970413dafbe6cc78d0d",
+        "id": "LICENSE",
+        "marketId": "OPENZEPPELIN-LICENSE-PERMISSION",
+        "maxAgeSeconds": 7776000,
+        "minimumConfidenceBps": 8500,
+        "minimumSources": 1
+      }
+    ],
+    "version": 1
+  },
+  "manifestHash": "0x4cb9ada8ec90cbc7aa909709498e1a3436094dc14d5c6106c24d0058f71d081a",
+  "transactions": {
+    "deploy": {
+      "hash": "0x243ae6bb5a39945498c7a222d019f5d2167ce2e41fd5406aea2490c38357ee46",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "FINISHED_WITH_RETURN"
+    },
+    "open": {
+      "hash": "0x8d3d482d15f50ca9182be75ed218ca6519b2be94182b289ebe2b974482333cd8",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "FINISHED_WITH_RETURN"
+    },
+    "consume": {
+      "hash": "0x342cc6a96aaa951c5da7fc9b2c30e5aaa7f4855b8c85c542201f3ffdad61ad78",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "FINISHED_WITH_RETURN"
+    },
+    "renew": {
+      "hash": "0x862181ef3eefeba287b3c8040d333892ee0c852698961ed228fc0079e3cee222",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "FINISHED_WITH_RETURN"
+    },
+    "revoke": {
+      "hash": "0x56a1333ddc527a6a489c39b2fb6748df37ce4d0b5ef979614a9db7cd37a4a8d3",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "FINISHED_WITH_RETURN"
+    },
+    "replay": {
+      "hash": "0x6da529101742f04b5b059151cb589e2d4e66231c644493a49cf0246cc368f11c",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "FINISHED_WITH_RETURN"
+    },
+    "rejectedAfterRevocation": {
+      "hash": "0x5c8add216848a04a1e4d03b43e6a5eaf33e7fa6cc5b39c2a1bb9dbc56a6cde12",
+      "status": "FINALIZED",
+      "consensus": "MAJORITY_AGREE",
+      "execution": "FINISHED_WITH_ERROR",
+      "rejection": "LEASE_REVOKED"
+    }
+  },
+  "grant": {
+    "capabilityId": "BUILD-JOB",
+    "chainId": 61997,
+    "contractAddress": "0x94e0c78a432ac2e8bb8476305380efdef59aa382",
+    "epoch": 1,
+    "expiresAt": 1794473238,
+    "gateId": "LEASE-STUDIO-NEXT",
+    "grantHash": "0x7a23a8017cf5e3b4695dd4b4124982d18c4ad89ed0d0ed6ce4cd76a50763bce1",
+    "issuedAt": 1794469638,
+    "kind": "LEASE_GRANT",
+    "manifestHash": "0x4cb9ada8ec90cbc7aa909709498e1a3436094dc14d5c6106c24d0058f71d081a",
+    "oracles": [
+      {
+        "contractAddress": "0xf91789141312a8fe22c50489e2aafd0af645f2e7",
+        "evidenceDigest": "0x8e344319056ddaa54cba6d508f77838f5260d6cab3076b05c73be1028a67aad2",
+        "id": "LICENSE",
+        "observedAt": 1791521411,
+        "outcomeId": "PERMITTED",
+        "specHash": "0xe0772dcfcda9d27b345b491c238273f4785e166cf310b970413dafbe6cc78d0d"
+      }
+    ],
+    "previousGrantHash": null,
+    "resourceHash": "0x4dc49318ef518ea553e7f891af66ab6b163486e3da418209fa8c487e302ff27e",
+    "subject": "0xfd2da29fcbc354df989a13d1a200f2b5f6fa6c0e",
+    "usedAtGrant": 0,
+    "version": 1
+  },
+  "consumption": {
+    "capabilityId": "BUILD-JOB",
+    "chainId": 61997,
+    "consumedAt": 1794469686,
+    "contractAddress": "0x94e0c78a432ac2e8bb8476305380efdef59aa382",
+    "epoch": 1,
+    "gateId": "LEASE-STUDIO-NEXT",
+    "grantHash": "0x7a23a8017cf5e3b4695dd4b4124982d18c4ad89ed0d0ed6ce4cd76a50763bce1",
+    "kind": "LEASE_CONSUMPTION",
+    "manifestHash": "0x4cb9ada8ec90cbc7aa909709498e1a3436094dc14d5c6106c24d0058f71d081a",
+    "oracles": [
+      {
+        "contractAddress": "0xf91789141312a8fe22c50489e2aafd0af645f2e7",
+        "evidenceDigest": "0x8e344319056ddaa54cba6d508f77838f5260d6cab3076b05c73be1028a67aad2",
+        "id": "LICENSE",
+        "observedAt": 1791521411,
+        "outcomeId": "PERMITTED",
+        "specHash": "0xe0772dcfcda9d27b345b491c238273f4785e166cf310b970413dafbe6cc78d0d"
+      }
+    ],
+    "receiptHash": "0x318f3c037a3cad5249618436059fc269da2c5a6e237d4f0c613e40906928b00f",
+    "requestId": "0x4dde717338e8c850eb84903540f2d7f372c0c9bf2f564e24c1142168fa1ce3de",
+    "resourceHash": "0x4dc49318ef518ea553e7f891af66ab6b163486e3da418209fa8c487e302ff27e",
+    "sequence": 1,
+    "subject": "0xfd2da29fcbc354df989a13d1a200f2b5f6fa6c0e",
+    "version": 1
+  },
+  "renewal": {
+    "capabilityId": "BUILD-JOB",
+    "chainId": 61997,
+    "contractAddress": "0x94e0c78a432ac2e8bb8476305380efdef59aa382",
+    "epoch": 2,
+    "expiresAt": 1794473328,
+    "gateId": "LEASE-STUDIO-NEXT",
+    "grantHash": "0x61bef554d6a944957c57e1f3d27088f348691ba93f16ee1cea91d08bf0a546bb",
+    "issuedAt": 1794469728,
+    "kind": "LEASE_GRANT",
+    "manifestHash": "0x4cb9ada8ec90cbc7aa909709498e1a3436094dc14d5c6106c24d0058f71d081a",
+    "oracles": [
+      {
+        "contractAddress": "0xf91789141312a8fe22c50489e2aafd0af645f2e7",
+        "evidenceDigest": "0x8e344319056ddaa54cba6d508f77838f5260d6cab3076b05c73be1028a67aad2",
+        "id": "LICENSE",
+        "observedAt": 1791521411,
+        "outcomeId": "PERMITTED",
+        "specHash": "0xe0772dcfcda9d27b345b491c238273f4785e166cf310b970413dafbe6cc78d0d"
+      }
+    ],
+    "previousGrantHash": "0x7a23a8017cf5e3b4695dd4b4124982d18c4ad89ed0d0ed6ce4cd76a50763bce1",
+    "resourceHash": "0x4dc49318ef518ea553e7f891af66ab6b163486e3da418209fa8c487e302ff27e",
+    "subject": "0xfd2da29fcbc354df989a13d1a200f2b5f6fa6c0e",
+    "usedAtGrant": 1,
+    "version": 1
+  },
+  "revocation": {
+    "capabilityId": "BUILD-JOB",
+    "chainId": 61997,
+    "contractAddress": "0x94e0c78a432ac2e8bb8476305380efdef59aa382",
+    "epoch": 2,
+    "gateId": "LEASE-STUDIO-NEXT",
+    "kind": "LEASE_REVOCATION",
+    "manifestHash": "0x4cb9ada8ec90cbc7aa909709498e1a3436094dc14d5c6106c24d0058f71d081a",
+    "reasonHash": "0x85d1adca65e92ed3c6fe9c32255bc839c5523f681c23611c1a1f519540fe2209",
+    "resourceHash": "0x4dc49318ef518ea553e7f891af66ab6b163486e3da418209fa8c487e302ff27e",
+    "revocationHash": "0xe7064c0c22f6555c2c953079a749de0229118cbfa2beefa389d9fe3aa44893b5",
+    "revokedAt": 1794469781,
+    "subject": "0xfd2da29fcbc354df989a13d1a200f2b5f6fa6c0e",
+    "version": 1
+  },
+  "state": {
+    "blockers": [
+      "LEASE_REVOKED"
+    ],
+    "capabilityId": "BUILD-JOB",
+    "chainId": 61997,
+    "contractAddress": "0x94e0c78a432ac2e8bb8476305380efdef59aa382",
+    "epoch": 2,
+    "gateId": "LEASE-STUDIO-NEXT",
+    "manifestHash": "0x4cb9ada8ec90cbc7aa909709498e1a3436094dc14d5c6106c24d0058f71d081a",
+    "maxUses": 2,
+    "resourceHash": "0x4dc49318ef518ea553e7f891af66ab6b163486e3da418209fa8c487e302ff27e",
+    "revoked": true,
+    "status": "REVOKED",
+    "subject": "0xfd2da29fcbc354df989a13d1a200f2b5f6fa6c0e",
+    "used": 1,
+    "version": 1
+  }
+}

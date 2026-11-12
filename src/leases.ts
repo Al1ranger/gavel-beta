@@ -4,6 +4,7 @@ import type {WorkflowOracle, WorkflowCompletion} from './workflow.ts';
 import {oracleVerificationRuntime} from './workflowRuntime.ts';
 import {leaseRuntime} from './leaseRuntime.ts';
 import {TransactionHashVariant} from 'genlayer-js/types';
+import {getAddress} from 'viem';
 
 type Hex = `0x${string}`;
 type OracleSnapshot = WorkflowCompletion['oracles'][number];
@@ -126,6 +127,8 @@ export function createLeaseClient(config: {reader: LeaseReader; chainId: number;
   const manifest = normalizeLeasePolicy(config.expectedManifest);
   const manifestHash = resolutionDigest(manifest);
   resolutionCheck(integer(chainId, 1) && hex(contractAddress, 40) && !/^0x0{40}$/.test(contractAddress), 'INVALID_LEASE_DEPLOYMENT');
+  // Studio's RPC indexes checksummed addresses. Receipt hashes use lowercase.
+  const rpcAddress = getAddress(contractAddress);
   const capability = (id: string) => {
     resolutionCheck(manifest.capabilities.some(c => c.id === id), 'UNKNOWN_CAPABILITY');
     return manifest.capabilities.find(c => c.id === id)!;
@@ -134,7 +137,7 @@ export function createLeaseClient(config: {reader: LeaseReader; chainId: number;
     let raw: unknown;
     try {
       resolutionCheck(Number(await reader.getChainId()) === chainId, 'LEASE_CHAIN_MISMATCH');
-      raw = await reader.readContract({address: contractAddress, functionName, args, transactionHashVariant: TransactionHashVariant.LATEST_FINAL});
+      raw = await reader.readContract({address: rpcAddress, functionName, args, transactionHashVariant: TransactionHashVariant.LATEST_FINAL});
     } catch (error) {
       if ((error as {code?: string}).code === 'LEASE_CHAIN_MISMATCH') throw error;
       throw new Error('LEASE_RPC_READ_FAILED');
@@ -149,7 +152,7 @@ export function createLeaseClient(config: {reader: LeaseReader; chainId: number;
     identity(manifest, record);
     resolutionCheck(record.chainId === chainId && record.contractAddress === contractAddress, 'LEASE_DEPLOYMENT_MISMATCH');
   }
-  const request = (functionName: string, args: (string | number)[]) => ({address: contractAddress, functionName, args, value: 0n});
+  const request = (functionName: string, args: (string | number)[]) => ({address: rpcAddress, functionName, args, value: 0n});
   return {
     manifest: clone(manifest),
     async preview(id: string) {

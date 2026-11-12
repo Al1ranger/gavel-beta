@@ -92,7 +92,8 @@
     "test:live-api": "node examples/live-check.ts"
   },
   "dependencies": {
-    "genlayer-js": "1.1.8"
+    "genlayer-js": "1.1.8",
+    "viem": "2.56.3"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",

@@ -11,8 +11,9 @@
   unsigned requests, offline integrity audits and generation/audit CLI commands.
 - New `gavel-judgment-sdk/leases` export, reproducible generation example and
   adversarial tests. Existing workflow completion semantics are unchanged.
-- Source release candidate only; this section does not claim npm publication,
-  public-network consensus, token transfers or external job execution.
+- [Studio Next verification](deployments/authorization-leases-studio-next.json)
+  recorded seven finalized transactions covering lease admission, renewal,
+  revocation, replay and a rejected request. The SDK remains a source candidate.
 
 ## 0.3.0 — onchain workflow gates
 
